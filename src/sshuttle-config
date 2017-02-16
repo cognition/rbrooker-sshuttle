@@ -1,12 +1,12 @@
 
 
 # This it the Sshuttle Confige file
-# 
-# 
+#
+#
 # usage: sshuttle [-l [ip:]port] [-r [username@]sshserver[:port]] <subnets...>
 # or: sshuttle --firewall <port> <subnets...>
 # or: sshuttle --hostwatch
-# 
+#
 # -l, --listen ...      transproxy to this ip address and port number
 # -H, --auto-hosts      scan for remote hostnames and update local /etc/hosts
 # -N, --auto-nets       automatically determine subnets to route
@@ -33,4 +33,11 @@
 # --hostwatch           (internal use only)
 
 
+# [TODO] make this into a script to generate config file
 
+sshuttle --remote=$SSH \
+         --listen=$LISTEN_TRANSPROXY \
+         --disable-ipv6 \
+         --pidfile $PID_FILE \
+         # --dns=$DNS \
+         --verbose
